@@ -380,7 +380,7 @@
                         <a  title="Perfil" id="ic_perfil'.$Q.'" onclick="ventanaPerfil('.$Q.', '.$modulo.', '.$id.')"><i class="fa fa-user" aria-hidden="true"></i></a>
                       </li> 
                       <li>
-                        <a  title="Estadísticas" id="ic_estadisticas'.$Q.'" onclick="ventanaEstadisticas('.$Q.', '.$modulo.', '.$id.')"><i class="fa fa-bar-chart" aria-hidden="true"></i></a>
+                        <a  title="Accesos" id="ic_estadisticas'.$Q.'" onclick="ventanaEstadisticas('.$Q.', '.$modulo.', '.$id.')"><i class="fa fa-sign-in" aria-hidden="true"></i></a>
                       </li>        
                     </ul>
                   </nav>						
