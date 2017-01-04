@@ -135,7 +135,7 @@
 
   <div class="container">
     <div class="breadcrumbs">
-      <img style="top: 7px; left: 80px; height: 45px; z-index: 2; position: absolute;" src="/passctrl/img/ctrllpas.png">      
+      <img style="top: 7px; left: 80px; height: 45px; z-index: 2; position: absolute;" src="/passctrl/img/passctrl.png">      
       <ul class="social">
         <?php
             include("sesion.php");

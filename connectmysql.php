@@ -1,5 +1,5 @@
 <?php
-$conn = new mysqli("localhost", "root","nosewn", "passctrl");
+$conn = new mysqli("localhost", "root","adminCIAL2016", "passctrl");
 // Check connection
 if ($conn->connect_error) {
 	die("Connection failed: " . $conn->connect_error);

@@ -78,7 +78,7 @@ if( isset($_SESSION['ingreso']) || isset($_COOKIE['nueva'])){
           </div>
           
           <div class="logo">
-            <img src="img/ctrllpas.png" />
+            <img src="img/passctrl2.png" style="" />
           </div>
           
           <form id="registration-form">

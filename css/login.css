@@ -67,8 +67,8 @@ a{
 .logo {
   position: relative;
   top: 30px;
-  width: 150px;
-  height: 150px;
+  width: 250px;
+  height: 250px;
   margin: auto;
   /*background: url(http://localhost/passctrl/img/cp4.png) no-repeat center;*/
   -webkit-background-size: cover;
@@ -82,8 +82,8 @@ a{
   text-align:center;
 }
 .logo img{
-  max-width: 150px;
-  max-height: 150px;
+  max-width: 250px;
+  max-height: 250px;
 }
 
 form {
