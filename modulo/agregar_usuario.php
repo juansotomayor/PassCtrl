@@ -53,7 +53,6 @@
             var acceso = document.getElementById('gender-si').checked;
             var bio = document.getElementById('gender-si-bio').checked;
             var rfid = document.getElementById('gender-si-rfid').checked;
-            var nfc = document.getElementById('gender-si-nfc').checked;
             if(sexo == true){
             fd.append("sexo", "hombre");
             }else{
@@ -73,11 +72,6 @@
             fd.append("rfid", "1");
             }else{
             fd.append("rfid", "0");
-            }
-            if(nfc == true){
-            fd.append("nfc", "1");
-            }else{
-            fd.append("nfc", "0");
             }
             fd.append("imagen", document.getElementById('files').files[0]);
             fd.append("modulo", 1);
@@ -143,23 +137,19 @@
       </ul>
     </div>
     <header class="clearfix">
-      <span>PassCtrl</span> 
-      <h1>Agregar usuario</h1>
-      <nav>
-        <a href="#" class="icon-arrow-left" data-info="Previous">Previous</a>
-        <a href="#" class="icon-drop" data-info="See All">See All</a>
-      </nav>     
+      <h1>Agregar usuario</h1>  
     </header>
     <!--End Header -->
     <ul class="tl-menu">
       <li><a href="#">Logo</a></li>
       <li class="tl-current"><a title="Ver modulos" href="/passctrl/modulo/" class="entypo-shareable" id="navItem1">Option 1</a></li>
-      <li><a href="#" class="icon-chart" id="navItem2">Option 2</a></li>
+      <!--<li><a href="#" class="icon-chart" id="navItem2">Option 2</a></li>
       <li><a href="#" id="navItem3">Option 3</a></li>
       <li> <a href="#" class="icon-download" id="navItem4">Active</a></li>
       <li><a href="#" class="entypo-network" id="navItem5">Option 4</a></li>
       <li><a href="#" class="icon-lamp" id="navItem6">Option 5</a></li>
       <li><a href="#" class="icon-file" id="navItem7">Option 6</a></li>
+      -->
     </ul>
     <div  class="main"> 
         <div class="img_user2" id="img_user2">
@@ -242,7 +232,6 @@
                     <th>Acceso</th>
                     <th><a title="Biometria"><img class="manImg" src="/passctrl/img/icon/Fingerprint Scan-50.png"></img></a></th>
                     <th><a title="RFID"><img class="manImg" src="/passctrl/img/icon/RFID Tag Filled-50.png"></img></a></th>
-                    <th><a title="NFC"><img class="manImg" src="/passctrl/img/icon/NFC N-52.png"></img></a></th>
                 </tr>
             </thead>
             <tbody>
@@ -277,15 +266,6 @@
                         <label class="famele" for="gender-no-rfid"><i class="fa fa-times" aria-hidden="true"></i></label>  
                         </div>
                     </td>
-                    <td >
-                        <div id="wrapper5" class="div_selec">
-                        <input id="gender-si-nfc" type="radio" name="nfc" value="si">
-                        <label class="male" for="gender-si-nfc"><i class="fa fa-check" aria-hidden="true"></i></label>
-
-                        <input   id="gender-no-nfc" type="radio" name="nfc" value="no" checked>
-                        <label class="famele" for="gender-no-nfc"><i class="fa fa-times" aria-hidden="true"></i></label>  
-                        </div>
-                    </td>
                 
                 </tr>
                 
@@ -306,11 +286,12 @@
       <h3>MODULO</h3>
       <a href="/passctrl/modulo/usuarios.php" ><i class="fa fa-users" aria-hidden="true"></i>&nbsp;<p>Usuarios</p></a>
       <a href="/passctrl/modulo/agregar_usuario.php"><i  class="fa fa-user-plus" aria-hidden="true"></i>&nbsp;<p>Agregar Usuario</p></a>
+      <!--<a href="#"></a>
       <a href="#"></a>
       <a href="#"></a>
       <a href="#"></a>
       <a href="#"></a>
-      <a href="#"></a>
+      -->
     </nav>
 
   </div>

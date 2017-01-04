@@ -57,12 +57,13 @@
     <ul class="tl-menu">
       <li><a href="#" >Logo</a></li>
       <li class="tl-current"><a title="Ver modulos" href="/passctrl/modulo/" class="entypo-shareable" id="navItem1">Option 1</a> </li>
-      <li><a href="#" class="icon-chart" id="navItem2">Option 2</a></li>
+      <!--<li><a href="#" class="icon-chart" id="navItem2">Option 2</a></li>
       <li><a href="#" class="entypo-camera" id="navItem3">Option 3</a></li>
       <li> <a href="#" class="icon-download" id="navItem4">Active</a></li>
       <li><a href="#" class="entypo-network" id="navItem5">Option 4</a></li>
       <li><a href="#" class="icon-lamp" id="navItem6">Option 5</a></li>
       <li><a href="#" class="icon-file" id="navItem7">Option 6</a></li>
+      -->
     </ul>
     <div id="main_usuarios" class="main">
       
@@ -76,11 +77,14 @@
     <nav class="slider-menu slider-menu-vertical slider-menu-left" id="slider-menu-s1">
       <h3>MODULO</h3>
       <a href="/passctrl/modulo/usuarios.php" ><i class="fa fa-users" aria-hidden="true"></i>&nbsp;<p>Usuarios</p></a>
-      <a href="/passctrl/modulo/agregar_usuario.php"><i  class="fa fa-user-plus" aria-hidden="true"></i>&nbsp;<p>Agregar Usuario</p></a>      <a href="#">Item 3</a>
+      <a href="/passctrl/modulo/agregar_usuario.php"><i  class="fa fa-user-plus" aria-hidden="true"></i>&nbsp;<p>Agregar Usuario</p></a>      
+      <!--
+        <a href="#">Item 3</a>
       <a href="#">Item 4</a>
       <a href="#">Item 5</a>
       <a href="#">Item 6</a>
       <a href="#">Item 7</a>
+      -->
     </nav>
 
   </div>

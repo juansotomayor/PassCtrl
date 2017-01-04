@@ -13,7 +13,6 @@
     $acceso = mysqli_real_escape_string($conn,$_POST['acceso']);
     $bio = mysqli_real_escape_string($conn,$_POST['bio']);
     $rfid = mysqli_real_escape_string($conn,$_POST['rfid']);
-    $nfc = mysqli_real_escape_string($conn,$_POST['nfc']);
     if($modulo){
         $codigo = generarCodigo(9);
         do {		
@@ -28,9 +27,9 @@
             $resultado = @move_uploaded_file($_FILES["imagen"]["tmp_name"], $ruta);
             
             if ($resultado){
-                $sql = "INSERT INTO usuarios_modulos (user, idModulo, imagen, nombre, apellido, email, telefono, empresa, cargo, rut, sexo, acceso, biometria, rfid, nfc, id_code)
+                $sql = "INSERT INTO usuarios_modulos (user, idModulo, imagen, nombre, apellido, email, telefono, empresa, cargo, rut, sexo, acceso, biometria, rfid, id_code)
                 VALUES ('ON', '$modulo', '".$img."','".$nombre."','".$apellido."','".$email."','".$celular."','".$empresa."',
-                '".$cargo."','".$rut."','".$sexo."','".$acceso."','".$bio."','".$rfid."','".$nfc."','".$codigo."')";             
+                '".$cargo."','".$rut."','".$sexo."','".$acceso."','".$bio."','".$rfid."','".$codigo."')";             
                 if ($conn->query($sql) === TRUE ) {	
                     echo "Usuario adicionado exitosamente!";
                 }else{
@@ -40,8 +39,8 @@
                 echo "Tenemos problemas con tu imagen";
             }
         }else{
-            $sql = "INSERT INTO usuarios_modulos (user, idModulo, nombre, apellido, email, telefono, empresa, cargo, rut, sexo, acceso, biometria, rfid, nfc, id_code)
-                VALUES ('ON', '$modulo', '$nombre','$apellido','$email','$celular','$empresa','$cargo','$rut','$sexo','$acceso','$bio','$rfid','$nfc','$codigo')"; 
+            $sql = "INSERT INTO usuarios_modulos (user, idModulo, nombre, apellido, email, telefono, empresa, cargo, rut, sexo, acceso, biometria, rfid, id_code)
+                VALUES ('ON', '$modulo', '$nombre','$apellido','$email','$celular','$empresa','$cargo','$rut','$sexo','$acceso','$bio','$rfid','$codigo')"; 
             if ($conn->query($sql) === TRUE ) {	
                 echo "Usuario adicionado exitosamente!";
             }else{

@@ -14,7 +14,6 @@
     $acceso = mysqli_real_escape_string($conn,$_POST['acceso']);
     $bio = mysqli_real_escape_string($conn,$_POST['bio']);
     $rfid = mysqli_real_escape_string($conn,$_POST['rfid']);
-    $nfc = mysqli_real_escape_string($conn,$_POST['nfc']);
     if($id && $modulo){
         $img = $_FILES['imagen']['name'];
         if($img){
@@ -22,7 +21,7 @@
             $resultado = @move_uploaded_file($_FILES["imagen"]["tmp_name"], $ruta);
             
             if ($resultado){
-                $sql = "UPDATE usuarios_modulos SET imagen ='".$img."', nombre ='".$nombre."',apellido ='".$apellido."',email ='".$email."',telefono ='".$celular."',empresa='".$empresa."', cargo='".$cargo."', RUT='".$rut."', sexo='".$sexo."',acceso='".$acceso."',biometria='".$bio."',rfid='".$rfid."',nfc='".$nfc."', fecha_act=now() WHERE id='".$id."'";
+                $sql = "UPDATE usuarios_modulos SET imagen ='".$img."', nombre ='".$nombre."',apellido ='".$apellido."',email ='".$email."',telefono ='".$celular."',empresa='".$empresa."', cargo='".$cargo."', RUT='".$rut."', sexo='".$sexo."',acceso='".$acceso."',biometria='".$bio."',rfid='".$rfid."', fecha_act=now() WHERE id='".$id."'";
                 if ($conn->query($sql) === TRUE ) {	
                     echo "Modificación exitosa!";
                 }else{
@@ -32,7 +31,7 @@
                 echo "Problemas al cargar la imagen al servidor";
             }
         }else{
-            $sql = "UPDATE usuarios_modulos SET nombre ='".$nombre."',apellido ='".$apellido."',email ='".$email."',telefono ='".$celular."',empresa='".$empresa."', cargo='".$cargo."', RUT='".$rut."', sexo='".$sexo."',acceso='".$acceso."',biometria='".$bio."',rfid='".$rfid."',nfc='".$nfc."', fecha_act=now() WHERE id='".$id."'";
+            $sql = "UPDATE usuarios_modulos SET nombre ='".$nombre."',apellido ='".$apellido."',email ='".$email."',telefono ='".$celular."',empresa='".$empresa."', cargo='".$cargo."', RUT='".$rut."', sexo='".$sexo."',acceso='".$acceso."',biometria='".$bio."',rfid='".$rfid."', fecha_act=now() WHERE id='".$id."'";
             if ($conn->query($sql) === TRUE ) {	
                 echo "Modificación exitosa!";
             }else{

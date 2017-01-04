@@ -131,7 +131,6 @@
     var acceso= document.getElementById("AC"+user).value; 
     var bio= document.getElementById("BIO"+user).value; 
     var rfid= document.getElementById("RFID"+user).value; 
-    var nfc= document.getElementById("NFC"+user).value; 
      if(sexo == 'H'){
         document.getElementById("gender-male"+user).checked = true;
         document.getElementById("gender-female"+user).checked = false;
@@ -160,13 +159,6 @@
         document.getElementById("gender-si-rfid"+user).checked = false;
         document.getElementById("gender-no-rfid"+user).checked = true;
       }
-      if(nfc == 'si'){
-        document.getElementById("gender-si-nfc"+user).checked = true;
-        document.getElementById("gender-no-nfc"+user).checked = false;
-      }else{
-        document.getElementById("gender-si-nfc"+user).checked = false;
-        document.getElementById("gender-no-nfc"+user).checked = true;
-      }
     for(i=1; i<=7;i++){
       var x = document.getElementById("form"+i+user).readOnly;
       if (x == true){
@@ -176,7 +168,6 @@
         document.getElementById("acceso"+user).style.display = "none";
         document.getElementById("biometria"+user).style.display = "none";
         document.getElementById("rfid"+user).style.display = "none";
-        document.getElementById("nfc"+user).style.display = "none";
         document.getElementById("content_uploader"+user).style.display = "block";
         document.getElementById("add"+user).style.display = "block";
         document.getElementById("btnsubir"+user).style.display = "block";
@@ -184,7 +175,6 @@
         document.getElementById("wrapper2"+user).style.display = "block"; 
         document.getElementById("wrapper3"+user).style.display = "block";
         document.getElementById("wrapper4"+user).style.display = "block";
-        document.getElementById("wrapper5"+user).style.display = "block";
          
              
       }else{   
@@ -195,14 +185,12 @@
         document.getElementById("wrapper2"+user).style.display = "none"; 
         document.getElementById("wrapper3"+user).style.display = "none";  
         document.getElementById("wrapper4"+user).style.display = "none";  
-        document.getElementById("wrapper5"+user).style.display = "none";  
         document.getElementById("btnsubir"+user).style.display = "none"; 
         document.getElementById("content_uploader"+user).style.display = "none";
         document.getElementById("sexo"+user).style.display = "block";  
         document.getElementById("acceso"+user).style.display = "block"; 
         document.getElementById("biometria"+user).style.display = "block";
         document.getElementById("rfid"+user).style.display = "block";
-        document.getElementById("nfc"+user).style.display = "block";
         document.getElementById("form"+i+user).className = document.getElementById("form"+i+user).className.replace( /(?:^|\s)border(?!\S)/g , '' )
       }      
     }    
@@ -220,7 +208,6 @@
      var acceso = document.getElementById('gender-si'+id).checked;
      var bio = document.getElementById('gender-si-bio'+id).checked;
      var rfid = document.getElementById('gender-si-rfid'+id).checked;
-     var nfc = document.getElementById('gender-si-nfc'+id).checked;
      if(sexo == true){
        fd.append("sexo", "hombre");
      }else{
@@ -240,11 +227,6 @@
        fd.append("rfid", "1");
      }else{
        fd.append("rfid", "0");
-     }
-     if(nfc == true){
-       fd.append("nfc", "1");
-     }else{
-       fd.append("nfc", "0");
      }
     fd.append("imagen", document.getElementById('files'+id).files[0]);
     fd.append("modulo", modulo);
@@ -313,7 +295,6 @@
 </head>
 
 <body class="">
-
   <div class="container">
     <div class="breadcrumbs">
       <img style="top: 7px; left: 80px; height: 45px; z-index: 2; position: absolute;" src="/passctrl/img/passctrl.png">      
@@ -324,23 +305,20 @@
       </ul>
     </div>
     <header class="clearfix">
-      <span>PassCtrl</span> 
-      <h1>Usuarios</h1>
-      <nav>
-        <a href="#" class="icon-arrow-left" data-info="Previous">Previous</a>
-        <a href="#" class="icon-drop" data-info="See All">See All</a>
-      </nav>     
+      <h1>Usuarios</h1> 
     </header>
     <!--End Header -->
     <ul class="tl-menu">
       <li><a href="#">Logo</a></li>
       <li class="tl-current"><a title="Ver modulos" href="/passctrl/modulo/" class="entypo-shareable" id="navItem1">Option 1</a></li>
+       <!--
       <li><a href="#" class="icon-chart" id="navItem2">Option 2</a></li>
       <li><a href="#" id="navItem3">Option 3</a></li>
       <li> <a href="#" class="icon-download" id="navItem4">Active</a></li>
       <li><a href="#" class="entypo-network" id="navItem5">Option 4</a></li>
       <li><a href="#" class="icon-lamp" id="navItem6">Option 5</a></li>
       <li><a href="#" class="icon-file" id="navItem7">Option 6</a></li>
+      -->
     </ul>
     <div id="main_usuarios" class="main">       
       <?php
@@ -399,14 +377,11 @@
                   <nav class="nav nav1">
                     <ul>
                       <li>
-                        <a  title="Estadísticas" id="ic_estadisticas'.$Q.'" onclick="ventanaEstadisticas('.$Q.', '.$modulo.', '.$id.')"><i class="fa fa-bar-chart" aria-hidden="true"></i></a>
-                      </li>
-                      <li>
                         <a  title="Perfil" id="ic_perfil'.$Q.'" onclick="ventanaPerfil('.$Q.', '.$modulo.', '.$id.')"><i class="fa fa-user" aria-hidden="true"></i></a>
-                      </li>
+                      </li> 
                       <li>
-                        <a href="#">Nav Item</a>
-                      </li>               
+                        <a  title="Estadísticas" id="ic_estadisticas'.$Q.'" onclick="ventanaEstadisticas('.$Q.', '.$modulo.', '.$id.')"><i class="fa fa-bar-chart" aria-hidden="true"></i></a>
+                      </li>        
                     </ul>
                   </nav>						
                   <div id="c_estadisticas'.$Q.'" class="menu_user">
@@ -480,11 +455,13 @@
     <nav class="slider-menu slider-menu-vertical slider-menu-left" id="slider-menu-s1">
       <h3>MODULO</h3>
       <a href="/passctrl/modulo/usuarios.php" ><i class="fa fa-users" aria-hidden="true"></i>&nbsp;<p>Usuarios</p></a>
-      <a href="/passctrl/modulo/agregar_usuario.php"><i  class="fa fa-user-plus" aria-hidden="true"></i>&nbsp;<p>Agregar Usuario</p></a>      <a href="#">Item 3</a>
+      <a href="/passctrl/modulo/agregar_usuario.php"><i  class="fa fa-user-plus" aria-hidden="true"></i>&nbsp;<p>Agregar Usuario</p></a>      
+      <!--<a href="#">Item 3</a>
       <a href="#">Item 4</a>
       <a href="#">Item 5</a>
       <a href="#">Item 6</a>
       <a href="#">Item 7</a>
+      -->
     </nav>
 
   </div>

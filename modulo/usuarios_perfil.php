@@ -17,7 +17,6 @@
         $fecha=$registro['fecha'];
         $biometria=$registro['biometria'];
         $rfid=$registro['rfid'];
-        $nfc=$registro['nfc'];
         $telefono=$registro['telefono'];
         $email=$registro['email'];
         $estado=$registro['acceso'];
@@ -43,7 +42,6 @@
         }
         $BIO = '<img class="manImg" src="/passctrl/img/icon/Fingerprint Scan-50.png"></img>';
         $RF = '<img class="manImg" src="/passctrl/img/icon/RFID Tag Filled-50.png"></img>';
-        $NF = '<img class="manImg" src="/passctrl/img/icon/NFC N-52.png"></img>';
 
         if($biometria == 1 ){
             $BIOMETRIA = 'si';
@@ -59,13 +57,6 @@
             $RFID = 'no';
             $eerfid =  '<i class="fa fa-times rojo" aria-hidden="true"></i>';
         }
-        if($nfc == 1){
-            $NFC = 'si';
-            $eenfc = '<i class="fa fa-check verde" aria-hidden="true"></i>';
-        }else{
-            $NFC = 'no';
-            $eenfc =  '<i class="fa fa-times rojo" aria-hidden="true"></i>';
-        }//<div id="img_user"><img src="/passctrl/img/usuarios/anonimo.jpg"></div>
         if($user == "ON"){//<div id="img_user"><img src="/passctrl/img/usuarios/plataf.jpg"></div>
         echo '  
             <div class="img_user" id="img_user'.$id.'">                   
@@ -140,7 +131,6 @@
                             <th>Acceso</th>
                             <th><a title="Biometria">'.$BIO.'</a></th>
                             <th><a title="RFID">'.$RF.'</a></th>
-                            <th><a title="NFC">'.$NF.'</a></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -177,16 +167,6 @@
                                 <label class="famele" for="gender-no-rfid'.$id.'"><i class="fa fa-times" aria-hidden="true"></i></label>  
                                 </div>
                                 <span id="rfid'.$id.'">'.$eerfid.'</span><input type="hidden" id="RFID'.$id.'" value="'.$RFID.'">
-                            </td>
-                            <td >
-                                <div id="wrapper5'.$id.'" class="wrapper">
-                                <input id="gender-si-nfc'.$id.'" type="radio" name="nfc" value="si">
-                                <label class="male" for="gender-si-nfc'.$id.'"><i class="fa fa-check" aria-hidden="true"></i></label>
-
-                                <input   id="gender-no-nfc'.$id.'" type="radio" name="nfc" value="no" >
-                                <label class="famele" for="gender-no-nfc'.$id.'"><i class="fa fa-times" aria-hidden="true"></i></label>  
-                                </div>
-                                <span id="nfc'.$id.'">'.$eenfc.'</span><input type="hidden" id="NFC'.$id.'" value="'.$NFC.'">
                             </td>
                       
                         </tr>
