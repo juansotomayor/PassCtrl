@@ -41,7 +41,7 @@
   <script>
   
   /********************************/
-    function ventanaMenu(user, id)
+    function ventanaMenu(user, id, modulo)
 	{
     document.getElementById("ic_perfil"+user).className = document.getElementById("ic_perfil"+user).className.replace( /(?:^|\s)current(?!\S)/g , '' )
     document.getElementById("ic_estadisticas"+user).className = document.getElementById("ic_estadisticas"+user).className.replace( /(?:^|\s)current(?!\S)/g , '' )
@@ -51,13 +51,15 @@
       document.getElementById("c_estadisticas"+i).style.display = 'none';
       if(i != user){   
         document.getElementById(i).className = document.getElementById(i).className.replace( /(?:^|\s)select(?!\S)/g , '' )
-        document.getElementById("user_info"+i).className =document.getElementById("user_info"+i).className.replace( /(?:^|\s)cortina(?!\S)/g , '' )         
+        document.getElementById("user_info"+i).className =document.getElementById("user_info"+i).className.replace( /(?:^|\s)cortina(?!\S)/g , '' ) 
+        
       }      
     }
     vista=document.getElementById("user_info"+user).className;
     if (vista==''){
 			document.getElementById("user_info"+user).className = "cortina";    
       document.getElementById(user).className = "select";    
+      ventanaPerfil(user, modulo, id);
 		}else{       
 			document.getElementById(user).className = document.getElementById(user).className.replace( /(?:^|\s)select(?!\S)/g , '' )
 			document.getElementById("user_info"+user).className = document.getElementById("user_info"+user).className.replace( /(?:^|\s)cortina(?!\S)/g , '' )
@@ -102,9 +104,11 @@
    vista=document.getElementById("c_perfil"+user).style.display;
 		if (vista=='block'){
 			vista='none';
+      
 		}else{
       document.getElementById("ic_perfil"+user).className = "current"; 
-			vista='block';				
+			vista='block';		
+      document.getElementById("c_perfil"+user).style.display = 'block';		
 		}
     
     document.getElementById("content_uploader"+id).style.display = "none";
@@ -351,7 +355,7 @@
           $empresa = $registro['empresa']; 
           $img = $registro['imagen'];          
             echo '
-            <tr id="'.$Q.'" class="tr" onclick="ventanaMenu(this.id, '.$id.')" >  
+            <tr id="'.$Q.'" class="tr" onclick="ventanaMenu(this.id, '.$id.', '.$modulo.')" >  
               <td class="td" class="tdfoto">
                 <div id="img_perfil">';
               if($img){
