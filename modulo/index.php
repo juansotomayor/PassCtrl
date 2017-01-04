@@ -47,7 +47,6 @@
       </ul>
     </div>
     <header class="clearfix">
-      <span>PassCtrl</span> 
       <h1>Modulos <?php echo $var;?></h1>
       <nav>
         <a href="#" class="icon-arrow-left" data-info="Previous">Previous</a>

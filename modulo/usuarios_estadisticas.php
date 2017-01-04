@@ -59,9 +59,9 @@ if($buscar == "usuario"){
             }else {
                 $estado = '<i class="fa fa-times rojo fa-2x" aria-hidden="true"></i>';
            }
-            if($registro['tipo'] == 'biometria'){
+            if($registro['tipo'] == 'BIOMETRIA'){
                 $img = '<img title="Biometria" class="manImg" src="/passctrl/img/icon/Fingerprint Scan-50.png"></img>';
-            }else if($registro['tipo'] == 'rfid'){
+            }else if($registro['tipo'] == 'RFID'){
                 $img = '<img title="RFID" class="manImg" src="/passctrl/img/icon/RFID Tag Filled-50.png"></img>';
            }else if($registro['tipo'] == 'nfc'){
                 $img = '<img title="NFC" class="manImg" src="/passctrl/img/icon/NFC N-52.png"></img>';
@@ -84,18 +84,4 @@ if($buscar == "usuario"){
     }
 }
 
-
-
-
-/*$sql2 = "SELECT * FROM ingreso WHERE idModulo = '$modulo' AND id='$usuario' AND fecha BETWEEN (SELECT MIN(fecha) FROM ingreso) AND (SELECT MAX(fecha) FROM ingreso)";
-$query2 = mysqli_query($conn,$sql2);
-$numero2 =  $query2->num_rows;
-if($numero2 != 0 ){
-    $Q =0;
-    while ($registro = mysqli_fetch_assoc($query2)){ 
-        $Q++; 
-        
-    }
-}
-echo $Q;*/
 ?>
