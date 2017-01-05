@@ -459,7 +459,8 @@
     <nav class="slider-menu slider-menu-vertical slider-menu-left" id="slider-menu-s1">
       <h3>MODULO</h3>
       <a href="/passctrl/modulo/usuarios.php" ><i class="fa fa-users" aria-hidden="true"></i>&nbsp;<p>Usuarios</p></a>
-      <a href="/passctrl/modulo/agregar_usuario.php"><i  class="fa fa-user-plus" aria-hidden="true"></i>&nbsp;<p>Agregar Usuario</p></a>      
+      <a href="/passctrl/modulo/agregar_usuario.php"><i  class="fa fa-user-plus" aria-hidden="true"></i>&nbsp;<p>Agregar Usuario</p></a>
+      <a href="/passctrl/modulo/historial_ingresos.php"><i  class="fa fa-calendar-check-o" aria-hidden="true"></i>&nbsp;<p>Historial</p></a>      
       <!--<a href="#">Item 3</a>
       <a href="#">Item 4</a>
       <a href="#">Item 5</a>
