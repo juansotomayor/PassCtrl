@@ -109,6 +109,7 @@
     </ul>
     
     <div id="main_usuarios" class="main">  
+      
         <?php 
           $modulo = 1;
           $sql2 = "SELECT * FROM ingreso WHERE idModulo = '$modulo'AND fecha=(SELECT MIN(fecha) FROM ingreso WHERE idModulo = '$modulo')";
@@ -130,30 +131,28 @@
                   $max= date_format($max, 'Y-m-d'); 
               }
           }
-          echo ' 
-          <div class="buscador de fechas">
-            <table>
-              <tr>
-                <td>
-                  Fecha de inicio
-                </td>
-                <td>
-                  <input type="date" id="fecha_inicio" onchange="fecha2()" min="'.$min.'" max="'.$max.'">
-                </td>
-                <td>
-                  Fecha de inicio
-                </td>
-                <td>
-                  <input type="date" id="fecha_termino"  min="'.$min.'" max="'.$max.'">
-                </td>
-                <td>
-                  <button onclick="historial('.$modulo.')" class="btn blue" type="button">Filtrar</button>
-                </td>
-              </tr>
-            </table>
-          </div>
-          ';
         ?> 
+        <table id="tabla_form" style=" border:1px solid #003042;">
+          <tbody>
+            <tr>
+              <td class="texto">
+                Fecha de inicio
+              </td>
+              <td>
+                <input type="date" id="fecha_inicio" onchange="fecha2()" min="<?php echo $min;?>" max="<?php echo $max;?>">
+              </td>
+              <td>
+                Fecha de inicio
+              </td>
+              <td>
+                <input type="date" id="fecha_termino"  min="<?php echo $min;?>" max="<?php echo $max;?>">
+              </td>
+              <td>
+                <button onclick="historial(<?php echo $modulo;?>)" class="btn blue" type="button">Filtrar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
         <div id="historial">
 
         </div>           
