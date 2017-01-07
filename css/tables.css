@@ -13,9 +13,7 @@
 .plomo:hover{
   color: #bdbdbd;
 }
-#tabla_form{
-  border:1px solid #003042;
-}
+
 .Texto{
   color: black;
 }
@@ -581,3 +579,16 @@ input[type="radio"]:checked + .famele {
   padding: 5px;
   width: 70px;
 }
+
+#tabla_form{
+  /*border:1px solid #003042;*/
+}
+#tabla_form td{
+  color: #00254e;
+  padding: 20px 20px 20px 0px;
+  font-weight: bold;
+}
+.h3{
+  
+}
+::-webkit-datetime-edit { padding: 1em; }

@@ -132,23 +132,26 @@
               }
           }
         ?> 
+        <h3 style="font-size: 24px;color: #00254e;">Seleccione intervalos de fechas </h3>
         <table id="tabla_form" style=" ">
           <tbody>
             <tr>
               <td class="texto">
-                Fecha de inicio
+                <i class="fa fa-calendar fa-2x" aria-hidden="true"></i>
+Inicio
               </td>
               <td>
                 <input type="date" id="fecha_inicio" onchange="fecha2()" min="<?php echo $min;?>" max="<?php echo $max;?>">
               </td>
               <td>
-                Fecha de inicio
+                <i class="fa fa-calendar fa-2x" aria-hidden="true"></i>
+Termino
               </td>
               <td>
                 <input type="date" id="fecha_termino"  min="<?php echo $min;?>" max="<?php echo $max;?>">
               </td>
               <td>
-                <button onclick="historial(<?php echo $modulo;?>)" class="btn blue" type="button">Filtrar</button>
+                <button onclick="historial(<?php echo $modulo;?>)" class="btn blue" type="button">Buscar</button>
               </td>
             </tr>
           </tbody>

@@ -31,7 +31,8 @@ if($buscar == "usuario"){
         }
     }
     echo '    
-        Reporte por dia<input type="date" id="fecha_dia'.$usuario.'" onchange="fecha_dia('.$usuario.','.$modulo.')" min="'.$min.'" max="'.$max.'"><br>
+        Reporte por dia </br>
+        <i class="fa fa-calendar fa-2x" aria-hidden="true"></i> <input type="date" id="fecha_dia'.$usuario.'" onchange="fecha_dia('.$usuario.','.$modulo.')" min="'.$min.'" max="'.$max.'"><br>
     ';
 }else if($buscar == "fecha_dia"){
     
@@ -96,7 +97,6 @@ if($buscar == "usuario"){
     $numero2 =  $query2->num_rows;
     if($numero2 != 0 ){
         echo'
-        <h3>Reporte correspondiente a la fecha '.$fecha_his.'</h3>
         <table class="list_usuarios">
             <thead>
                 <tr class="tr">
