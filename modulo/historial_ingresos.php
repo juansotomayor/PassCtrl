@@ -132,7 +132,7 @@
               }
           }
         ?> 
-        <table id="tabla_form" style=" border:1px solid #003042;">
+        <table id="tabla_form" style=" ">
           <tbody>
             <tr>
               <td class="texto">
